@@ -1,0 +1,28 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<button class="btn btn-primary" @onclick="OpenModal">Show Modal</button>
+
+<BlazorModal Title="Hello from Blazor Templated Components" IsOpened="isOpened">
+    <ModalBody>
+        <h4>Is it nice?</h4>
+        <p>this is a templated component in Blazor WebAssembly</p>
+    </ModalBody>
+    <ModalFooter>
+        <button class="btn btn-primary">Close Modal</button>
+    </ModalFooter>
+</BlazorModal>
+
+@code {
+    bool isOpened = false;
+
+    void OpenModal()
+    {
+        isOpened = true; 
+    }
+}
